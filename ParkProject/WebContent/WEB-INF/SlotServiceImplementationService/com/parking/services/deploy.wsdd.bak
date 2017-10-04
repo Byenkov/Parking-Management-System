@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SlotServiceImplementationService WSDL service -->
+
+  <service name="SlotServiceImplementation" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.parking.com"/>
+      <parameter name="wsdlServiceElement" value="SlotServiceImplementationService"/>
+      <parameter name="schemaQualified" value="http://services.parking.com"/>
+      <parameter name="wsdlServicePort" value="SlotServiceImplementation"/>
+      <parameter name="className" value="com.parking.services.SlotServiceImplementationSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="SlotServiceImplementation"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="setParkingSlotTaken" qname="operNS:setParkingSlotTaken" xmlns:operNS="http://services.parking.com" returnQName="retNS:setParkingSlotTakenReturn" xmlns:retNS="http://services.parking.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:parkingSlotID" xmlns:pns="http://services.parking.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setParkingSlotFree" qname="operNS:setParkingSlotFree" xmlns:operNS="http://services.parking.com" returnQName="retNS:setParkingSlotFreeReturn" xmlns:retNS="http://services.parking.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:parkingSlotID" xmlns:pns="http://services.parking.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="setParkingSlotTaken setParkingSlotFree"/>
+
+  </service>
+</deployment>

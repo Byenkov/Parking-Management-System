@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.parking.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.parking.com" xmlns:intf="http://services.parking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.parking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSlotsWithTickets">
+    <complexType/>
+   </element>
+   <element name="getSlotsWithTicketsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSlotsWithTicketsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSlotsWithoutTickets">
+    <complexType/>
+   </element>
+   <element name="getSlotsWithoutTicketsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSlotsWithoutTicketsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSlotIds">
+    <complexType/>
+   </element>
+   <element name="getSlotIdsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSlotIdsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFreeSlotIds">
+    <complexType/>
+   </element>
+   <element name="getFreeSlotIdsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getFreeSlotIdsReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getSlotsWithoutTicketsRequest">
+
+      <wsdl:part element="impl:getSlotsWithoutTickets" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSlotsWithTicketsRequest">
+
+      <wsdl:part element="impl:getSlotsWithTickets" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFreeSlotIdsRequest">
+
+      <wsdl:part element="impl:getFreeSlotIds" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSlotsWithTicketsResponse">
+
+      <wsdl:part element="impl:getSlotsWithTicketsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSlotsWithoutTicketsResponse">
+
+      <wsdl:part element="impl:getSlotsWithoutTicketsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSlotIdsRequest">
+
+      <wsdl:part element="impl:getSlotIds" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSlotIdsResponse">
+
+      <wsdl:part element="impl:getSlotIdsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFreeSlotIdsResponse">
+
+      <wsdl:part element="impl:getFreeSlotIdsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebServiceAPIimpl">
+
+      <wsdl:operation name="getSlotsWithTickets">
+
+         <wsdl:input message="impl:getSlotsWithTicketsRequest" name="getSlotsWithTicketsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSlotsWithTicketsResponse" name="getSlotsWithTicketsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSlotsWithoutTickets">
+
+         <wsdl:input message="impl:getSlotsWithoutTicketsRequest" name="getSlotsWithoutTicketsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSlotsWithoutTicketsResponse" name="getSlotsWithoutTicketsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSlotIds">
+
+         <wsdl:input message="impl:getSlotIdsRequest" name="getSlotIdsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSlotIdsResponse" name="getSlotIdsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFreeSlotIds">
+
+         <wsdl:input message="impl:getFreeSlotIdsRequest" name="getFreeSlotIdsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFreeSlotIdsResponse" name="getFreeSlotIdsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceAPIimplSoapBinding" type="impl:WebServiceAPIimpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSlotsWithTickets">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSlotsWithTicketsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSlotsWithTicketsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSlotsWithoutTickets">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSlotsWithoutTicketsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSlotsWithoutTicketsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSlotIds">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSlotIdsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSlotIdsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFreeSlotIds">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFreeSlotIdsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFreeSlotIdsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceAPIimplService">
+
+      <wsdl:port binding="impl:WebServiceAPIimplSoapBinding" name="WebServiceAPIimpl">
+
+         <wsdlsoap:address location="http://localhost:8080/ParkProject/services/WebServiceAPIimpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
